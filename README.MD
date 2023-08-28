@@ -72,3 +72,4 @@ The second unit test, test\_-create_superuser, does the same, albeit for a super
 
 # testing push# django_news
 # django_news
+# django_news
