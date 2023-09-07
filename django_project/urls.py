@@ -6,6 +6,7 @@ To insure our URL routes are consistent, we place them bot at accounts/ so the e
 /accounts/login, /accounts/logout, and accounts/signup. """
 from django.contrib import admin
 from django.urls import path, include 
+
 from django.views.generic.base import TemplateView
 
 urlpatterns = [

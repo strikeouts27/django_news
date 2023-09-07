@@ -8,4 +8,4 @@ class ArticleAdmin(admin.ModelAdmin):
         "body",
         "author",
     ]
-admin.site.register(Article)
+admin.site.register(Article, ArticleAdmin)
