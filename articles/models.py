@@ -15,6 +15,9 @@ class Article(models.Model):
     def __str__(self):
         return self.title 
     
+    # AUTH_USER_MODEL makes sense for references within a models.py file.
+    # get_user_model() is reccomended for everwhere else, such as views, tests, etc. 
+    
     def get_absolute_url(self):
         return reverse("article_detail", kwargs={"pk": self.pk})
     

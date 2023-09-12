@@ -9,6 +9,8 @@ from django.urls import path, include
 
 from django.views.generic.base import TemplateView
 
+# when we make an app, we create a path for it and than create a path in the apps urls.py
+# the path presets admin/, accounts/, /articles to the url routes automatically.
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("accounts.urls")),

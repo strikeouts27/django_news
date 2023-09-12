@@ -6,9 +6,15 @@
     <p>{{ object.body }}</p>
 </div>
 <div>
-    <p><a href="{% url 'article_edit' article.pk %}"Edit</a>
+    <!-- Djangos url tag wants the url name and any arguments passed in.
+    in article edit we need to use its primary key article.pk
+    article delete also requires a primary key article.pk
+    Our articles page is a ListView and does not require any additional arguments -->
+    {% if article.author.pk == request.user.pk %}
+    <p><a href="{% url 'article_edit' article.pk %}">Edit</a>
         <a href="{% url 'article_delete' article.pk %}">Delete</a>
     </p>
+    {% endif %}
     <p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</ap>
     </div>
     {% endblock content %}
