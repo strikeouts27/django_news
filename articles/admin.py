@@ -3,7 +3,7 @@ from .models import Article, Comment
 
 # Register your models here.
 
-class CommentInline(admin.TabularInline):
+class CommentInline(admin.StackedInline):
     model = Comment 
     extra = 0 
 
