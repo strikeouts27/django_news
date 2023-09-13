@@ -28,8 +28,12 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = ["djangonews27.fly.dev", ".fly.dev", "localhost", "127.0.0.1"]
-CSRF_TRUSTED_ORIGINS = ["djangonews27.fly.dev/", "https://*.djangonews27.fly.com", "https://*.fly.dev/", "https://fly.io/apps/djangonews27/", "https://djangonews27-db.fly.dev"]
+ALLOWED_HOSTS = [
+    "newsapp27.fly.dev",
+    "localhost",
+    "127.0.0.1",
+]
+CSRF_TRUSTED_ORIGINS = ["https://newsapp27.fly.dev", "https://*.fly.dev"]
 
 
 # Application definition
@@ -42,10 +46,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
-    # 3rd Party 
+    # 3rd Party
     "crispy_forms",
     "crispy_bootstrap5",
-    # Local 
+    # Local
     "accounts",
     "pages",
     "articles",
@@ -68,7 +72,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         # We tell django to look in the new directory on this line of code.
-        "DIRS": [BASE_DIR / "templates"], 
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -88,7 +92,7 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-"default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3"),
+    "default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3"),
 }
 
 
@@ -129,10 +133,10 @@ USE_TZ = True
 # Static_Url is the URL location of all static files in production.
 STATIC_URL = "static/"
 # Staticfiles_dirs refers to any additional locations for static files beyone an app's static
-# folder. 
+# folder.
 STATICFILES_DIRS = [BASE_DIR / "static"]
 # is the directory location of all static files complied when collectstatic is run.
-STATIC_ROOT = BASE_DIR/ "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # is the storageengine used by collect static.
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -141,7 +145,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = "accounts.CustomUser" # new
+AUTH_USER_MODEL = "accounts.CustomUser"  # new
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
