@@ -28,8 +28,8 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = ["djangonews.fly.dev", "localhost", "127.0.0.1"]
-CSRF_TRUSTED_ORIGINS = ["https://fly.io/apps/djangonews"]
+ALLOWED_HOSTS = ["djangonews.fly.dev", ".fly.dev", "localhost", "127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = ["https://djangonews.fly.dev/", "https://*.djangonews.fly.com", "https://*.fly.dev"]
 
 
 # Application definition
